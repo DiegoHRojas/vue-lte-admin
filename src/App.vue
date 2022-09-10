@@ -1,19 +1,17 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import NavbarVue from "./components/Navbar.vue";
+import AsideVue from "./components/Aside.vue";
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="col-12 d-flex" style="min-height: 100vh">
+    <div class="col-2 bg-dark sidebar">
+      <AsideVue />
+    </div>
+    <div class="col-10">
+      <NavbarVue />
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
@@ -27,5 +25,8 @@ import HelloWorld from './components/HelloWorld.vue'
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+.sidebar {
+  box-shadow: 0 0 25px 1px #444 !important;
 }
 </style>
