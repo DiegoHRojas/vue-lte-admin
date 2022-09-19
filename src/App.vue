@@ -1,6 +1,15 @@
 <script setup>
 import sidebarVue from "./components/sidebar/sidebar.vue";
 import NavabarVue from "./components/navbar/Navabar.vue";
+import Config from "./components/setting/Config.vue";
+import Footer from "./components/Footer/Footer.vue";
+/*============= bg-color ============== */
+
+import { ref, provide } from "vue";
+
+const bgSidebar = ref("#474747");
+
+provide("bgSidebar", bgSidebar);
 </script>
 
 <template>
@@ -10,19 +19,11 @@ import NavabarVue from "./components/navbar/Navabar.vue";
       <div class="col p-0 bg-light">
         <NavabarVue />
         <router-view />
+        <Footer />
       </div>
     </div>
   </div>
-
-  <!--  <div class="col-12 d-flex" style="min-height: 100vh">
-    <div class="col-2 bg-dark sidebar">
-      <AsideVue />
-    </div>
-    <div class="col-10">
-      <NavbarVue />
-      <ContentVue />
-    </div>
-  </div> -->
+  <Config />
 </template>
 
 <style>

@@ -29,10 +29,12 @@
       text="Updated now"
     />
   </div>
+  <ChartVue />
 </template>
 
 <script setup>
 import CardHome from "./CardHome.vue";
+import ChartVue from "./Chart.vue";
 </script>
 
 <style lang="scss" scoped></style>

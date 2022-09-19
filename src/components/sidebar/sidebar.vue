@@ -1,6 +1,6 @@
 <template>
   <div class="col-2 content_sidebar">
-    <aside class="col-2 sidebar">
+    <aside class="col-2 sidebar" :style="bgSidebar">
       <LogoVue />
       <ul class="nav">
         <LinkVue
@@ -8,6 +8,7 @@
           :route="`/admin/${list.path}`"
           :text="list.title"
           :icon="list.icons"
+          :key="list.title"
         />
       </ul>
     </aside>
@@ -15,22 +16,25 @@
 </template>
 
 <script setup>
+import { inject, computed } from "vue";
 import LinkVue from "./Link.vue";
 import lista from "./lista";
 import LogoVue from "./Logo.vue";
+
+const colorBg = inject("bgSidebar");
+const bgSidebar = computed(() => ({ backgroundColor: colorBg.value }));
 </script>
 
 <style lang="scss">
 .content_sidebar {
   padding: 0;
   height: 100vh;
-  background-color: #474747;
 }
 
 .sidebar {
   position: fixed;
   height: 100%;
-  background-color: #474747;
+
   left: 0;
   top: 0;
   overflow: auto;
